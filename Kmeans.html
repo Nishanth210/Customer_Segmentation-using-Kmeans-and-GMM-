@@ -1,0 +1,75 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css"  rel="stylesheet">
+    <style>
+        body{
+            background-image:url("https://www.simplilearn.com/ice9/free_resources_article_thumb/The_difference_between_Artificial_Intelligence_Machine_Learning_and_Deep_Learning.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+           background-size: cover;
+           
+        }
+        .login{
+            margin-top: 150px;
+            
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            color: aliceblue;
+        }
+        label{
+           color: orange;
+        }
+        .output{
+            color:white;
+            text-align:center;
+            font-size:30px;
+        }
+        .cluster{
+            text-align: left;
+            color: beige;
+        }
+    </style>        
+</head>
+<body>
+    <div class="cluster">
+        <ol>
+         <li>Cluster(0):Low income & Low spending score</li>
+         <li>Cluster(1):High income & High spending score</li>
+         <li>Cluster(2):High income & Low spending score</li>
+         <li>Cluster(3):Low income & High spending score</li>
+        </ol>
+     </div>
+<div class="login">
+    <b><h1>CUSTOMER SEGMENTATION PREDICTION(Using KMeans)</h1></b>
+    <form action="/predict", method="POST", style="text-align: center;">
+        <br>
+        <label for="income" >Income in K</label>
+        <input type="text" name="incomet", placeholder="Enter income in k" required/>
+        
+        <br><br>
+        <label for="score">Spending Score</label>
+        <input type="text" name="score", placeholder="Enter Spending Score" required/>
+        <br><br>
+        <button value="Submit">Predict</button>
+    </form>
+    <form action="/visualize", method="POST", style="text-align: center;">
+        <button value="Submit">Visualize</button>
+    </form>
+    <form action="/pre", method="POST", style="text-align: center;">
+        <button value="Submit">GMM</button>
+    </form>
+    
+    <br>
+<div class="output">
+    {{prediction_text}}
+</div>
+</div>
+</body>
+</html>
